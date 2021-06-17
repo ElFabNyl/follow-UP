@@ -9,7 +9,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   //////////////////////////////////////////////////////////////////////
-  //                        here we go
+  //       le code ci sera sale. hahahaha. je vais refactor apres. 
   //////////////////////////////////////////////////////////////////////
   ///
   late AnimationController controller;
@@ -120,7 +120,38 @@ Drawer _drawer() {
   );
 }
 
-//buildind the appBarBottom section
+//more content
+
+_content() {
+  return Expanded(
+    child: SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
+      child: Container(
+        height: 120.0,
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(color: Colors.grey, blurRadius: 8.0),
+          ],
+          color: Colors.teal[200],
+          borderRadius: BorderRadius.circular(30),
+          border: Border.all(
+            color: Colors.teal,
+          ),
+        ),
+        child: Row(
+          children: [
+            Column(
+              children: [],
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+//buildind the appBarBottom section here
 
 Container _appBarBottomSection(context, AnimationController controller) {
   return Container(
@@ -140,7 +171,7 @@ Container _appBarBottomSection(context, AnimationController controller) {
         Padding(
           padding: const EdgeInsets.only(top: 20.0),
           child: TextLiquidFill(
-            boxHeight: 50.0,
+            boxHeight: 70.0,
             boxBackgroundColor: Colors.white,
             waveColor: Colors.black,
             text: 'Our Goal',
@@ -179,37 +210,6 @@ Container _appBarBottomSection(context, AnimationController controller) {
           ],
         )
       ],
-    ),
-  );
-}
-
-//more content
-
-_content() {
-  return Expanded(
-    child: SingleChildScrollView(
-      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
-      child: Container(
-        height: 120.0,
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(color: Colors.grey, blurRadius: 8.0),
-          ],
-          color: Colors.teal[200],
-          borderRadius: BorderRadius.circular(30),
-          border: Border.all(
-            color: Colors.teal,
-          ),
-        ),
-        child: Row(
-          children: [
-            Column(
-              children: [],
-            )
-          ],
-        ),
-      ),
     ),
   );
 }
