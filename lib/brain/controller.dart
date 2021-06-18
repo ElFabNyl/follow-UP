@@ -6,17 +6,17 @@ class Brain {
   static List<Convert> getConvert() {
     return [
       Convert(
-          name: 'name',
-          number: '0000000000',
+          name: 'Lamblin Ngueyap',
+          number: '696519917',
           location: 'biyem-assi',
-          followerName: 'Fab',
-          followerphone: '111111111'),
+          followerName: 'fomum zacharias',
+          followerphone: '526514256'),
       Convert(
-          name: 'name',
-          number: '0000000000',
-          location: 'biyem-assi',
-          followerName: 'Fab',
-          followerphone: '222222222')
+          name: 'Kamtou Boris',
+          number: '569958452',
+          location: 'bonas',
+          followerName: 'joseph ngandeu',
+          followerphone: '965253125')
     ];
   }
 }

@@ -20,6 +20,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     convertis = Brain.getConvert();
+    convertDataSource = ConvertDataSource(convertis: convertis);
     controller = AnimationController(
         duration: Duration(seconds: 15),
         vsync: this,
@@ -127,47 +128,56 @@ Drawer _drawer() {
 //more content
 
 _contentGrid(convertDataSource) {
-  return SfDataGrid(
-    source: convertDataSource,
-    columns: <GridColumn>[
-      GridTextColumn(
+  return Padding(
+    padding: const EdgeInsets.only(top: 15.0),
+    child: SfDataGrid(
+      source: convertDataSource,
+      columns: <GridColumn>[
+        GridTextColumn(
           columnName: 'Name',
           label: Container(
-              padding: EdgeInsets.all(16.0),
-              alignment: Alignment.centerRight,
-              child: Text(
-                'Lamblin',
-              ))),
-      GridTextColumn(
+            padding: EdgeInsets.all(16.0),
+            alignment: Alignment.centerRight,
+            child: Text(
+              'Name',
+            ),
+          ),
+        ),
+        GridTextColumn(
           columnName: 'Phone',
           label: Container(
-              padding: EdgeInsets.all(16.0),
-              alignment: Alignment.centerLeft,
-              child: Text('00000000'))),
-      GridTextColumn(
+            padding: EdgeInsets.all(16.0),
+            alignment: Alignment.centerLeft,
+            child: Text('Phone'),
+          ),
+        ),
+        GridTextColumn(
           columnName: 'Location',
           width: 120,
           label: Container(
-              padding: EdgeInsets.all(16.0),
-              alignment: Alignment.centerLeft,
-              child: Text('etoug-Ebe'))),
-      GridTextColumn(
-        columnName: 'Follower Name',
-        label: Container(
-          padding: EdgeInsets.all(16.0),
-          alignment: Alignment.centerRight,
-          child: Text('Lord'),
+            padding: EdgeInsets.all(16.0),
+            alignment: Alignment.centerLeft,
+            child: Text('Location'),
+          ),
         ),
-      ),
-      GridTextColumn(
-        columnName: 'Follower phone',
-        label: Container(
-          padding: EdgeInsets.all(16.0),
-          alignment: Alignment.centerRight,
-          child: Text('11111111'),
+        GridTextColumn(
+          columnName: 'F.Name',
+          label: Container(
+            padding: EdgeInsets.all(16.0),
+            alignment: Alignment.centerRight,
+            child: Text('F.Name'),
+          ),
         ),
-      ),
-    ],
+        GridTextColumn(
+          columnName: 'F.phone',
+          label: Container(
+            padding: EdgeInsets.all(16.0),
+            alignment: Alignment.centerRight,
+            child: Text('F.phone'),
+          ),
+        ),
+      ],
+    ),
   );
 }
 
@@ -255,15 +265,16 @@ class ConvertDataSource extends DataGridSource {
   @override
   DataGridRowAdapter? buildRow(DataGridRow row) {
     return DataGridRowAdapter(
-        cells: row.getCells().map<Widget>((dataGridCell) {
-      return Container(
-        alignment: (dataGridCell.columnName == 'name' ||
-                dataGridCell.columnName == 'follower Phone')
-            ? Alignment.centerRight
-            : Alignment.centerLeft,
-        padding: EdgeInsets.all(16.0),
-        child: Text(dataGridCell.value.toString()),
-      );
-    }).toList());
+      cells: row.getCells().map<Widget>((dataGridCell) {
+        return Container(
+          alignment: (dataGridCell.columnName == 'name' ||
+                  dataGridCell.columnName == 'follower Phone')
+              ? Alignment.centerRight
+              : Alignment.centerLeft,
+          padding: EdgeInsets.all(16.0),
+          child: Text(dataGridCell.value.toString()),
+        );
+      }).toList(),
+    );
   }
 }
