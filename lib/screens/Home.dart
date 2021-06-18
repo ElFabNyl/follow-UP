@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+// import 'package:syncfusion_flutter_datagrid/datagrid.dart';
+import 'package:followup/brain/controller.dart';
+import 'package:followup/models/Convert.dart';
+import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -8,14 +12,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
-  //////////////////////////////////////////////////////////////////////
-  //       le code ci sera sale. hahahaha. je vais refactor apres. 
-  //////////////////////////////////////////////////////////////////////
-  ///
+  List<Convert> convertis = <Convert>[];
+
+  late ConvertDataSource convertDataSource;
   late AnimationController controller;
   //at the initialisation, i build my animation controller.
   @override
   void initState() {
+    convertis = Brain.getConvert();
     controller = AnimationController(
         duration: Duration(seconds: 15),
         vsync: this,
@@ -52,7 +56,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         child: Column(
           children: [
             _appBarBottomSection(context, controller),
-            _content(),
+            _contentGrid(convertDataSource),
           ],
         ),
       ),
@@ -104,7 +108,7 @@ Drawer _drawer() {
         ),
         ListTile(
           leading: Icon(Icons.list),
-          title: Text("my converts list"),
+          title: Text("Converts Added"),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -122,32 +126,48 @@ Drawer _drawer() {
 
 //more content
 
-_content() {
-  return Expanded(
-    child: SingleChildScrollView(
-      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
-      child: Container(
-        height: 120.0,
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(color: Colors.grey, blurRadius: 8.0),
-          ],
-          color: Colors.teal[200],
-          borderRadius: BorderRadius.circular(30),
-          border: Border.all(
-            color: Colors.teal,
-          ),
-        ),
-        child: Row(
-          children: [
-            Column(
-              children: [],
-            ),
-          ],
+_contentGrid(convertDataSource) {
+  return SfDataGrid(
+    source: convertDataSource,
+    columns: <GridColumn>[
+      GridTextColumn(
+          columnName: 'Name',
+          label: Container(
+              padding: EdgeInsets.all(16.0),
+              alignment: Alignment.centerRight,
+              child: Text(
+                'Lamblin',
+              ))),
+      GridTextColumn(
+          columnName: 'Phone',
+          label: Container(
+              padding: EdgeInsets.all(16.0),
+              alignment: Alignment.centerLeft,
+              child: Text('00000000'))),
+      GridTextColumn(
+          columnName: 'Location',
+          width: 120,
+          label: Container(
+              padding: EdgeInsets.all(16.0),
+              alignment: Alignment.centerLeft,
+              child: Text('etoug-Ebe'))),
+      GridTextColumn(
+        columnName: 'Follower Name',
+        label: Container(
+          padding: EdgeInsets.all(16.0),
+          alignment: Alignment.centerRight,
+          child: Text('Lord'),
         ),
       ),
-    ),
+      GridTextColumn(
+        columnName: 'Follower phone',
+        label: Container(
+          padding: EdgeInsets.all(16.0),
+          alignment: Alignment.centerRight,
+          child: Text('11111111'),
+        ),
+      ),
+    ],
   );
 }
 
@@ -212,4 +232,38 @@ Container _appBarBottomSection(context, AnimationController controller) {
       ],
     ),
   );
+}
+
+class ConvertDataSource extends DataGridSource {
+  ConvertDataSource({required List<Convert> convertis}) {
+    _convertis = convertis
+        .map<DataGridRow>((e) => DataGridRow(cells: [
+              DataGridCell<String>(columnName: 'name', value: e.name),
+              DataGridCell<String>(columnName: 'number', value: e.number),
+              DataGridCell<String>(columnName: 'location', value: e.location),
+              DataGridCell<String>(
+                  columnName: 'follower Name', value: e.followerName),
+              DataGridCell<String>(
+                  columnName: 'follower Phone', value: e.followerphone),
+            ]))
+        .toList();
+  }
+  List<DataGridRow> _convertis = [];
+  @override
+  List<DataGridRow> get rows => _convertis;
+
+  @override
+  DataGridRowAdapter? buildRow(DataGridRow row) {
+    return DataGridRowAdapter(
+        cells: row.getCells().map<Widget>((dataGridCell) {
+      return Container(
+        alignment: (dataGridCell.columnName == 'name' ||
+                dataGridCell.columnName == 'follower Phone')
+            ? Alignment.centerRight
+            : Alignment.centerLeft,
+        padding: EdgeInsets.all(16.0),
+        child: Text(dataGridCell.value.toString()),
+      );
+    }).toList());
+  }
 }
