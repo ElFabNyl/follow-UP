@@ -8,10 +8,9 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register>
     with SingleTickerProviderStateMixin {
+      
   late final String email;
-
   late final String name;
-
   late final String password;
   late AnimationController controller;
   late Animation animation;
@@ -57,29 +56,37 @@ class _RegisterState extends State<Register>
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top:50.0),
+                      padding: const EdgeInsets.only(top: 50.0),
                       child: TextField(
-                        onChanged: (nameValue) {
-                          //Do something with the user input.
-                        },
-                        decoration: InputDecoration(
-                          hintText: 'Enter your name',
-                          labelStyle: TextStyle(color: Colors.black),
-                          contentPadding: EdgeInsets.symmetric(
-                              vertical: 10.0, horizontal: 20.0),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                      onChanged: (nameValue) {
+                        //Do something with the user input.
+                      },
+                      decoration: InputDecoration(
+                        hintText: 'Enter your name',
+                        labelStyle: TextStyle(color: Colors.black),
+                        contentPadding: EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 20.0),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(32.0),
                           ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                            borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(32.0),
                           ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey, width: 2.0),
-                            borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 2.0),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(32.0),
                           ),
                         ),
                       ),
+                    ),
                     ),
                     SizedBox(
                       height: 8.0,
@@ -94,15 +101,23 @@ class _RegisterState extends State<Register>
                         contentPadding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(32.0),
+                          ),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                          borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(32.0),
+                          ),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey, width: 2.0),
-                          borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 2.0),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(32.0),
+                          ),
                         ),
                       ),
                     ),
@@ -121,15 +136,23 @@ class _RegisterState extends State<Register>
                         contentPadding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(32.0),
+                          ),
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                          borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(32.0),
+                          ),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey, width: 2.0),
-                          borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 2.0),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(32.0),
+                          ),
                         ),
                       ),
                     ),
@@ -151,3 +174,4 @@ class _RegisterState extends State<Register>
     );
   }
 }
+

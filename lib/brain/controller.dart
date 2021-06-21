@@ -14,6 +14,30 @@ class Brain {
       Convert(
           name: 'Kamtou Boris',
           number: '569958452',
+          location: 'melen',
+          followerName: 'joseph ngandeu',
+          followerphone: '965253125'),
+      Convert(
+          name: 'Boris kamtou',
+          number: '569958452',
+          location: 'etoug-ebe',
+          followerName: 'joseph ngandeu',
+          followerphone: '965253125'),
+      Convert(
+          name: 'yvan nguekam',
+          number: '212545965',
+          location: 'bonas',
+          followerName: 'stevy marlino',
+          followerphone: '965253125'),
+      Convert(
+          name: 'abessolo endaman',
+          number: '569958452',
+          location: 'pk8',
+          followerName: 'joseph ngandeu',
+          followerphone: '965253125'),
+      Convert(
+          name: 'nyl Fabrice',
+          number: '569958452',
           location: 'bonas',
           followerName: 'joseph ngandeu',
           followerphone: '965253125')
