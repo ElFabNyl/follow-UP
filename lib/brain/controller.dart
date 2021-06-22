@@ -24,7 +24,7 @@ class Brain {
           followerName: 'joseph ngandeu',
           followerphone: '965253125'),
       Convert(
-          name: 'yvan nguekam',
+          name: 'yvannguekam',
           number: '212545965',
           location: 'bonas',
           followerName: 'stevy marlino',

@@ -10,16 +10,22 @@ class Widgets {
     return Padding(
       padding: const EdgeInsets.only(top: 15.0),
       child: SfDataGrid(
+        allowSorting: true,
+        swipeMaxOffset: 50000,
+        sortingGestureType: SortingGestureType.tap,
         source: convertDataSource,
         columns: <GridColumn>[
           GridTextColumn(
+            // columnWidthMode: ColumnWidthMode.fill,
             columnName: 'Name',
             label: Container(
               padding: EdgeInsets.all(16.0),
-              alignment: Alignment.centerRight,
+              alignment: Alignment.centerLeft,
               child: Text(
                 'Name',
+                
               ),
+              
             ),
           ),
           GridTextColumn(

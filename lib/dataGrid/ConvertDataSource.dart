@@ -10,9 +10,9 @@ class ConvertDataSource extends DataGridSource {
               DataGridCell<String>(columnName: 'number', value: e.number),
               DataGridCell<String>(columnName: 'location', value: e.location),
               DataGridCell<String>(
-                  columnName: 'follower Name', value: e.followerName),
+                  columnName: 'F.Name', value: e.followerName),
               DataGridCell<String>(
-                  columnName: 'follower Phone', value: e.followerphone),
+                  columnName: 'F.Phone', value: e.followerphone),
             ]))
         .toList();
   }
@@ -26,7 +26,7 @@ class ConvertDataSource extends DataGridSource {
       cells: row.getCells().map<Widget>((dataGridCell) {
         return Container(
           alignment: (dataGridCell.columnName == 'name' ||
-                  dataGridCell.columnName == 'follower Phone')
+                  dataGridCell.columnName == 'F.Phone')
               ? Alignment.centerRight
               : Alignment.centerLeft,
           padding: EdgeInsets.all(16.0),

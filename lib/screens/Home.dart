@@ -3,6 +3,7 @@ import 'package:followup/brain/controller.dart';
 import 'package:followup/models/Convert.dart';
 import 'package:followup/widgets/Widgets.dart';
 import 'package:followup/dataGrid/ConvertDataSource.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -52,11 +53,33 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       backgroundColor: Colors.white,
       appBar: Widgets.buildAppBar(),
       body: SafeArea(
-        child: Column(
-          children: [
-            Widgets.appBarBottomSection(context, controller),
-            Widgets.contentGrid(convertDataSource),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Widgets.appBarBottomSection(context, controller),
+              SizedBox(
+                height: 10.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left:8.0),
+                    child: Text(
+                      'Recent Added',
+                      style: GoogleFonts.inconsolata(
+                        textStyle: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.w900),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Widgets.contentGrid(convertDataSource),
+            ],
+          ),
         ),
       ),
     );
