@@ -64,7 +64,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left:8.0),
+                    padding: const EdgeInsets.only(left: 8.0),
                     child: Text(
                       'Recent Added',
                       style: GoogleFonts.inconsolata(

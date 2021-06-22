@@ -31,6 +31,7 @@ dependencies:
   animated_text_kit: ^4.2.1
   google_fonts: ^2.1.0
   syncfusion_flutter_datagrid: ^19.1.69-beta
+  badges: ^2.0.1
   
 
 dev_dependencies:

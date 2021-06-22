@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:badges/badges.dart';
 
 class Widgets {
   //more content
@@ -10,22 +11,21 @@ class Widgets {
     return Padding(
       padding: const EdgeInsets.only(top: 15.0),
       child: SfDataGrid(
+        headerRowHeight: 60,
         allowSorting: true,
         swipeMaxOffset: 50000,
         sortingGestureType: SortingGestureType.tap,
         source: convertDataSource,
         columns: <GridColumn>[
           GridTextColumn(
-            // columnWidthMode: ColumnWidthMode.fill,
             columnName: 'Name',
             label: Container(
               padding: EdgeInsets.all(16.0),
               alignment: Alignment.centerLeft,
               child: Text(
                 'Name',
-                
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              
             ),
           ),
           GridTextColumn(
@@ -33,7 +33,10 @@ class Widgets {
             label: Container(
               padding: EdgeInsets.all(16.0),
               alignment: Alignment.centerLeft,
-              child: Text('Phone'),
+              child: Text(
+                'Phone',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ),
           GridTextColumn(
@@ -42,7 +45,10 @@ class Widgets {
             label: Container(
               padding: EdgeInsets.all(16.0),
               alignment: Alignment.centerLeft,
-              child: Text('Location'),
+              child: Text(
+                'Location',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ),
           GridTextColumn(
@@ -50,7 +56,10 @@ class Widgets {
             label: Container(
               padding: EdgeInsets.all(16.0),
               alignment: Alignment.centerRight,
-              child: Text('F.Name'),
+              child: Text(
+                'F.Name',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ),
           GridTextColumn(
@@ -58,7 +67,10 @@ class Widgets {
             label: Container(
               padding: EdgeInsets.all(16.0),
               alignment: Alignment.centerRight,
-              child: Text('F.phone'),
+              child: Text(
+                'F.phone',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ),
         ],
@@ -138,10 +150,19 @@ class Widgets {
       title: Text("Young Converts"),
       actions: [
         Padding(
-          padding: const EdgeInsets.only(right: 15.0),
-          child: Icon(
-            Icons.notifications,
-            color: Colors.white,
+          padding: const EdgeInsets.only(right: 15.0, top: 15.0),
+          child: Badge(
+            alignment: Alignment.topLeft,
+            badgeColor: Colors.red,
+            shape: BadgeShape.circle,
+            badgeContent: Text(
+              '7',
+              style: TextStyle(color: Colors.white),
+            ),
+            child: Icon(
+              Icons.notifications,
+              color: Colors.white,
+            ),
           ),
         )
       ],
