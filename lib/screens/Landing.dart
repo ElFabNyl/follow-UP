@@ -69,8 +69,8 @@ class _LandingState extends State<Landing> with SingleTickerProviderStateMixin {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
-                          style:
-                              ElevatedButton.styleFrom(primary: animation.value),
+                          style: ElevatedButton.styleFrom(
+                              primary: animation.value),
                           onPressed: () {},
                           child: Text('Login'),
                         ),
@@ -85,8 +85,8 @@ class _LandingState extends State<Landing> with SingleTickerProviderStateMixin {
                           height: 10.0,
                         ),
                         ElevatedButton(
-                          style:
-                              ElevatedButton.styleFrom(primary: animation.value),
+                          style: ElevatedButton.styleFrom(
+                              primary: animation.value),
                           onPressed: () {},
                           child: Text('Register'),
                         ),

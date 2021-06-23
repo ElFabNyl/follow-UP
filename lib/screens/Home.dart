@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:followup/models/Convert.dart';
 import 'package:followup/widgets/Widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:followup/brain/Datas.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -9,8 +9,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
-  List<Convert> convertis = <Convert>[];
-
+ 
+ Data  ? _data ;
   late AnimationController controller;
   //at the initialisation, i build my animation controller.
   @override
@@ -48,34 +48,51 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       backgroundColor: Colors.white,
       appBar: Widgets.buildAppBar(),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Widgets.appBarBottomSection(context, controller),
-              SizedBox(
-                height: 10.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: Text(
-                      'Recent Added',
-                      style: GoogleFonts.inconsolata(
-                        textStyle: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 25.0,
-                            fontWeight: FontWeight.w900),
-                      ),
+        child: Column(
+          children: [
+            Widgets.appBarBottomSection(context, controller),
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Text(
+                    'Recent Added',
+                    style: GoogleFonts.inconsolata(
+                      textStyle: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
-                ],
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+             SizedBox(
+              height: 10.0,
+            ),
+            Column(
+              children: [
+                Card(
+                  child: ListView.builder(
+                    itemCount: _data!.getLength(),
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Text( 
+                        _data!.getName(index), 
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
   }
 }
+
