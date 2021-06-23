@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:followup/brain/controller.dart';
 import 'package:followup/models/Convert.dart';
 import 'package:followup/widgets/Widgets.dart';
-import 'package:followup/dataGrid/ConvertDataSource.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
@@ -13,13 +11,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   List<Convert> convertis = <Convert>[];
 
-  late ConvertDataSource convertDataSource;
   late AnimationController controller;
   //at the initialisation, i build my animation controller.
   @override
   void initState() {
-    convertis = Brain.getConvert();
-    convertDataSource = ConvertDataSource(convertis: convertis);
     controller = AnimationController(
         duration: Duration(seconds: 15),
         vsync: this,
@@ -77,7 +72,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   ),
                 ],
               ),
-              Widgets.contentGrid(convertDataSource),
             ],
           ),
         ),

@@ -1,83 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:badges/badges.dart';
 
 class Widgets {
-  //more content
-
-  static contentGrid(convertDataSource) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 15.0),
-      child: SfDataGrid(
-        headerRowHeight: 60,
-        allowSorting: true,
-        swipeMaxOffset: 50000,
-        sortingGestureType: SortingGestureType.tap,
-        source: convertDataSource,
-        columns: <GridColumn>[
-          GridTextColumn(
-            columnName: 'Name',
-            label: Container(
-              padding: EdgeInsets.all(16.0),
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Name',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          GridTextColumn(
-            columnName: 'Phone',
-            label: Container(
-              padding: EdgeInsets.all(16.0),
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Phone',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          GridTextColumn(
-            columnName: 'Location',
-            width: 120,
-            label: Container(
-              padding: EdgeInsets.all(16.0),
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Location',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          GridTextColumn(
-            columnName: 'F.Name',
-            label: Container(
-              padding: EdgeInsets.all(16.0),
-              alignment: Alignment.centerRight,
-              child: Text(
-                'F.Name',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          GridTextColumn(
-            columnName: 'F.phone',
-            label: Container(
-              padding: EdgeInsets.all(16.0),
-              alignment: Alignment.centerRight,
-              child: Text(
-                'F.phone',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
+ 
   //buildind the appBarBottom section here
 
   static Container appBarBottomSection(
