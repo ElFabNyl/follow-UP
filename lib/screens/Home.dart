@@ -9,8 +9,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
- 
- Data  ? _data ;
+  Data? _data;
   late AnimationController controller;
   //at the initialisation, i build my animation controller.
   @override
@@ -71,7 +70,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 ),
               ],
             ),
-             SizedBox(
+            SizedBox(
               height: 10.0,
             ),
             Column(
@@ -81,8 +80,12 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     itemCount: _data!.getLength(),
                     shrinkWrap: true,
                     itemBuilder: (BuildContext context, int index) {
-                      return Text( 
-                        _data!.getName(index), 
+                      return Row(
+                        children: [
+                          Text(
+                            _data!.getName(index),
+                          ),
+                        ],
                       );
                     },
                   ),
