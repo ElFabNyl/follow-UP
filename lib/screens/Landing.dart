@@ -71,7 +71,9 @@ class _LandingState extends State<Landing> with SingleTickerProviderStateMixin {
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               primary: animation.value),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, 'loginScreen');
+                          },
                           child: Text('Login'),
                         ),
                         SizedBox(
@@ -87,7 +89,9 @@ class _LandingState extends State<Landing> with SingleTickerProviderStateMixin {
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               primary: animation.value),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, 'registerScreen');
+                          },
                           child: Text('Register'),
                         ),
                       ],

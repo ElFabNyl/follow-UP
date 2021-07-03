@@ -91,6 +91,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 height: 10.0,
               ),
               ListView.builder(
+                scrollDirection: Axis.horizontal,
                 itemCount: user.convertisEnregistre.length,
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, int index) {

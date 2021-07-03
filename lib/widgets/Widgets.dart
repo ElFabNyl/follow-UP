@@ -77,16 +77,6 @@ class Widgets {
                               fontWeight: FontWeight.w500,
                               height: 1),
                         ),
-                        Text(
-                          'disciples',
-                          style: TextStyle(
-                              textBaseline: TextBaseline.alphabetic,
-                              color: Colors.black,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w900,
-                              height: 1,
-                              letterSpacing: 2.8),
-                        ),
                       ],
                     ),
                   ],
