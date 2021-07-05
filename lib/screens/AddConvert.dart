@@ -13,7 +13,8 @@ class _AddConvertState extends State<AddConvert>
   late String password;
   late AnimationController controller;
   late Animation animation;
-  DateTime _datetime = DateTime.now();
+  //j 'en aurais besoin...
+  // DateTime _datetime = DateTime.now();
   //at the initialisation, i build my animation controller.
   @override
   void initState() {
@@ -38,6 +39,7 @@ class _AddConvertState extends State<AddConvert>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(),
         backgroundColor: Colors.white,
         body: Padding(
           padding: const EdgeInsets.only(top: 30.0),
@@ -48,21 +50,17 @@ class _AddConvertState extends State<AddConvert>
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                    Hero(
-                      tag: 'img',
-                      child: Container(
-                        child: Image.asset('images/metrics-min.png'),
-                        height: 85.0,
-                      ),
-                    ),
+                
                     Padding(
                       padding: const EdgeInsets.only(top: 50.0),
                       child: TextField(
                         onChanged: (nameValue) {
                           //Do something with the user input.
                         },
+                        
                         decoration: InputDecoration(
                           hintText: 'Enter the young convert name',
+                          
                           labelStyle: TextStyle(color: Colors.black),
                           contentPadding: EdgeInsets.symmetric(
                               vertical: 10.0, horizontal: 20.0),
@@ -94,6 +92,7 @@ class _AddConvertState extends State<AddConvert>
                       },
                       decoration: InputDecoration(
                         hintText: 'Young convert phone',
+                        
                         labelStyle: TextStyle(color: Colors.black),
                         contentPadding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
@@ -121,6 +120,7 @@ class _AddConvertState extends State<AddConvert>
                       },
                       decoration: InputDecoration(
                         hintText: 'Young convert location',
+                        
                         labelStyle: TextStyle(color: Colors.black),
                         contentPadding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
@@ -175,6 +175,7 @@ class _AddConvertState extends State<AddConvert>
                       },
                       decoration: InputDecoration(
                         hintText: 'Follower phone',
+                       
                         labelStyle: TextStyle(color: Colors.black),
                         contentPadding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
@@ -196,7 +197,10 @@ class _AddConvertState extends State<AddConvert>
                     SizedBox(
                       height: 8.0,
                     ),
-                    Text(_datetime.toString()),
+
+                    //j'en aurais besoin.........======================
+                    // Text(_datetime.toString()),
+                    //==============================
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(primary: animation.value),
                       onPressed: () {},

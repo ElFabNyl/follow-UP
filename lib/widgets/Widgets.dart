@@ -26,7 +26,7 @@ class Widgets {
           Padding(
             padding: const EdgeInsets.only(top: 20.0),
             child: TextLiquidFill(
-              boxHeight: 70.0,
+              boxHeight: 75.0,
               boxBackgroundColor: Colors.white,
               waveColor: Colors.black,
               text: 'Our Goal',
@@ -57,7 +57,7 @@ class Widgets {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Colors.grey,
-                              fontSize: 20.0,
+                              fontSize: 25.0,
                               fontWeight: FontWeight.w500,
                               height: 1),
                         ),
@@ -96,39 +96,52 @@ class Widgets {
       backgroundColor: Colors.grey,
       title: Text(
         "Numbers",
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.3),
       ),
       centerTitle: true,
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 15.0, top: 15.0),
           child: Badge(
-            alignment: Alignment.topLeft,
+            showBadge: true,
+            alignment: Alignment.center,
             badgeColor: Colors.red,
             shape: BadgeShape.circle,
+            padding: EdgeInsets.all(8),
             badgeContent: Text(
-              '7',
+              '20',
               style: TextStyle(color: Colors.white),
             ),
-            child: Icon(
-              Icons.notifications,
+            child: IconButton(
+              icon: Icon(Icons.notifications),
               color: Colors.white,
+              onPressed: () {},
             ),
           ),
-        )
+        ),
       ],
     );
   }
 
 //building the drawer
-  static Drawer drawer() {
+  static Drawer drawer(context) {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text('Kamtou boris'),
-            accountEmail: Text("email@gmail.com"),
+            accountName: Text(
+              'Kamtou boris',
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
+            accountEmail: Text(
+              "email@gmail.com",
+              style: TextStyle(color: Colors.white),
+            ),
             currentAccountPicture: CircleAvatar(
               backgroundColor: Colors.white,
               child: Icon(
@@ -165,12 +178,22 @@ class Widgets {
             children: [
               ListTile(
                 onTap: () {},
+                leading: Icon(
+                  Icons.edit,
+                  color: Colors.blueGrey,
+                ),
+                title: Text("Edit profil"),
+              ),
+              ListTile(
+                onTap: () {
+                  Navigator.pushNamed(context, 'addConvertScreen');
+                },
                 leading: Icon(Icons.person_add),
                 title: Text("Add Convert"),
               ),
               ListTile(
                 onTap: () {},
-                leading: Icon(Icons.note_add),
+                leading: Icon(Icons.list_alt),
                 title: Text("Register myself"),
               ),
               ListTile(
@@ -181,10 +204,12 @@ class Widgets {
               ListTile(
                 onTap: () {},
                 leading: Icon(Icons.list),
-                title: Text("Converts List"),
+                title: Text("My converts List"),
               ),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, 'loginScreen');
+                },
                 leading: Icon(
                   Icons.logout_rounded,
                   color: Colors.blueGrey,

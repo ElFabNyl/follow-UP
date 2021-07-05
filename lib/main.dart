@@ -18,6 +18,7 @@ class Index extends StatelessWidget {
         'registerScreen': (context) => Register(),
         'addConvertScreen': (context) => AddConvert(),
         'homeScreen': (context) => Home(),
+        'landingScreen': (context) => Landing()
       },
       theme: ThemeData(
         primaryColor: Colors.grey,

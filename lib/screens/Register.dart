@@ -63,6 +63,7 @@ class _RegisterState extends State<Register>
                       },
                       decoration: InputDecoration(
                         hintText: 'Enter your name',
+                        prefix:  Icon(Icons.person),
                         labelStyle: TextStyle(color: Colors.black),
                         contentPadding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
@@ -97,6 +98,7 @@ class _RegisterState extends State<Register>
                       },
                       decoration: InputDecoration(
                         hintText: 'Enter your email',
+                        prefix:  Icon(Icons.email),
                         labelStyle: TextStyle(color: Colors.black),
                         contentPadding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
@@ -132,6 +134,7 @@ class _RegisterState extends State<Register>
                       obscureText: true,
                       decoration: InputDecoration(
                         hintText: 'Enter your password',
+                        prefix: Icon(Icons.lock),
                         labelStyle: TextStyle(color: Colors.black),
                         contentPadding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
@@ -159,11 +162,27 @@ class _RegisterState extends State<Register>
                     SizedBox(
                       height: 8.0,
                     ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(primary: animation.value),
-                      onPressed: () {},
-                      child: Text('Register'),
-                    ),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: animation.value),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('Cancel'),
+                          ),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: animation.value),
+                            onPressed: () {
+                              Navigator.pushNamed(context, 'homeScreen');
+                            }, 
+                            child: Text('Register'),
+                          )
+                        ],
+                      ),
                   ],
                 ),
               ),

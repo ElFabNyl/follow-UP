@@ -35,6 +35,8 @@ class _LandingState extends State<Landing> with SingleTickerProviderStateMixin {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,

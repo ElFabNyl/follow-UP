@@ -120,24 +120,29 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                     SizedBox(
                       height: 8.0,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              primary: animation.value),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: Text('Cancel'),
-                        ),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              primary: animation.value),
-                          onPressed: () {},
-                          child: Text('Login'),
-                        )
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: animation.value),
+                            onPressed: () {
+                              Navigator.pushNamed(context, 'landingScreen');
+                            },
+                            child: Text('Cancel'),
+                          ),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: animation.value),
+                            onPressed: () {
+                              Navigator.pushNamed(context, 'homeScreen');
+                            },
+                            child: Text('Login'),
+                          )
+                        ],
+                      ),
                     ),
                   ],
                 ),
