@@ -20,7 +20,7 @@ class Index extends StatelessWidget {
         'homeScreen': (context) => Home(),
         'landingScreen': (context) => Landing()
       },
-      theme: ThemeData(
+      theme: ThemeData( 
         primaryColor: Colors.grey,
       ),
       debugShowCheckedModeBanner: false,

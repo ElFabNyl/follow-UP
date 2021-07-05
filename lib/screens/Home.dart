@@ -47,12 +47,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).primaryColor,
         onPressed: () {
-         Navigator.pushNamed(context, 'addConvertScreen');
+          Navigator.pushNamed(context, 'addConvertScreen');
         },
-        child: IconButton(
-          icon: Icon(Icons.person_add),
-          onPressed: () {},
-        ),
+        child: Icon(Icons.person_add),
       ),
       drawer: Container(
         child: Widgets.drawer(context),
@@ -112,7 +109,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           children: [
                             Text(
                               nom +
-                                  user.convertisEnregistre[index].name.toString(),
+                                  user.convertisEnregistre[index].name
+                                      .toString(),
                               textScaleFactor: 1.2,
                             ),
                             SizedBox(height: 10.0),
@@ -163,7 +161,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                     style: TextStyle(color: Colors.white),
                                     textScaleFactor: 1.5,
                                   ),
-                                  
                                 ),
                               ],
                             ),
