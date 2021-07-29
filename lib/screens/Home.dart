@@ -155,7 +155,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                   borderRadius: BorderRadius.circular(15.0),
                                   elevation: 10,
                                   shape: BadgeShape.square,
-                                  badgeColor: Colors.grey,
+                                  badgeColor: Color(0xFFB9575CD),
                                   badgeContent: Text(
                                     '21/06/2021',
                                     style: TextStyle(color: Colors.white),

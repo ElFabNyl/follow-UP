@@ -222,4 +222,47 @@ class Widgets {
       ),
     );
   }
+
+  //building the dialogue alert here
+
+  static Future<void> showMyDialog(context) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            'Commitment',
+            style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 15.0, letterSpacing: 1.6),
+          ),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(
+                  'I commit myself to follow this young convert',
+                  style: TextStyle(
+                      fontStyle: FontStyle.italic ),
+                ),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text(
+                'Approve',
+                style: TextStyle(color: Colors.blueGrey),
+              ),
+              onPressed: () {
+                //avant de pop on va d'abord stoker les donnnées
+                Navigator.pushNamed(context, 'homeScreen');
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
 }

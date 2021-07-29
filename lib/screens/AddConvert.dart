@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:followup/widgets/Widgets.dart';
 // import 'package:followup/screens/Constants.dart';
 
 class AddConvert extends StatefulWidget {
@@ -50,17 +52,14 @@ class _AddConvertState extends State<AddConvert>
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                
                     Padding(
                       padding: const EdgeInsets.only(top: 50.0),
                       child: TextField(
                         onChanged: (nameValue) {
                           //Do something with the user input.
                         },
-                        
                         decoration: InputDecoration(
                           hintText: 'Enter the young convert name',
-                          
                           labelStyle: TextStyle(color: Colors.black),
                           contentPadding: EdgeInsets.symmetric(
                               vertical: 10.0, horizontal: 20.0),
@@ -92,7 +91,6 @@ class _AddConvertState extends State<AddConvert>
                       },
                       decoration: InputDecoration(
                         hintText: 'Young convert phone',
-                        
                         labelStyle: TextStyle(color: Colors.black),
                         contentPadding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
@@ -120,7 +118,6 @@ class _AddConvertState extends State<AddConvert>
                       },
                       decoration: InputDecoration(
                         hintText: 'Young convert location',
-                        
                         labelStyle: TextStyle(color: Colors.black),
                         contentPadding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
@@ -175,7 +172,6 @@ class _AddConvertState extends State<AddConvert>
                       },
                       decoration: InputDecoration(
                         hintText: 'Follower phone',
-                       
                         labelStyle: TextStyle(color: Colors.black),
                         contentPadding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
@@ -203,7 +199,11 @@ class _AddConvertState extends State<AddConvert>
                     //==============================
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(primary: animation.value),
-                      onPressed: () {},
+                      onPressed: () {
+
+                        Widgets.showMyDialog(context);
+                      
+                      },
                       child: Text('Register'),
                     ),
                   ],

@@ -34,24 +34,23 @@ class _LandingState extends State<Landing> with SingleTickerProviderStateMixin {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 50.0),
-                child: Hero(
-                  tag: 'img',
-                  child: Image.asset("images/metrics-min.png"),
-                ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 50.0),
+              child: Hero(
+                tag: 'img',
+                child: Image.asset("images/metrics-min.png", width: MediaQuery.of(context).size.width),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  AnimatedTextKit(
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.19,
+                  child: AnimatedTextKit(
                     animatedTexts: [
                       TypewriterAnimatedText(
                         'Keep a record of souls winning',
@@ -65,44 +64,44 @@ class _LandingState extends State<Landing> with SingleTickerProviderStateMixin {
                       ),
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 30.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              primary: animation.value),
-                          onPressed: () {
-                            Navigator.pushNamed(context, 'loginScreen');
-                          },
-                          child: Text('Login'),
-                        ),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Text(
-                          "------- Or -------",
-                          style: TextStyle(fontSize: 10.0),
-                        ),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              primary: animation.value),
-                          onPressed: () {
-                            Navigator.pushNamed(context, 'registerScreen');
-                          },
-                          child: Text('Register'),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ],
-          ),
+                ),
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        style:
+                            ElevatedButton.styleFrom(primary: animation.value),
+                        onPressed: () {
+                          Navigator.pushNamed(context, 'loginScreen');
+                        },
+                        child: Text('Login'),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                        "------- Or -------",
+                        style: TextStyle(fontSize: 10.0),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      ElevatedButton(
+                        style:
+                            ElevatedButton.styleFrom(primary: animation.value),
+                        onPressed: () {
+                          Navigator.pushNamed(context, 'registerScreen');
+                        },
+                        child: Text('Register'),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ],
         ),
       ),
     );
